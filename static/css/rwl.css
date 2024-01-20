@@ -1,0 +1,5 @@
+.return-warranty-list {
+    list-style-type: none; /* Remove the default list-style type (arrow) */
+    padding: 0; /* Remove any default padding */
+    margin: 0; /* Remove any default margin */
+}

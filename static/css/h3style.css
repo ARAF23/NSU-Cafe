@@ -1,0 +1,7 @@
+h3 {
+    font-size: 28px; /* Adjust the font size as needed */
+    font-weight: bold; /* Optionally, make the text bold */
+    margin-bottom: 20px; /* Add some space below the heading */
+    color: #333; /* Text color */
+    text-transform: uppercase; /* Convert text to uppercase */
+}

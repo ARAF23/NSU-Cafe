@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>NSU CAfeteria</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-cente">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+
+      
+
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <a href="index.html" class="logo me-auto me-lg-0"><img src="{% static 'img/loogoo.gif' %}" alt="" class="img-fluid"></a>
+      <h2 data-value="NSU Cafeteria" class="logo me-auto me-lg-0"> NSU Cafeteria</h2>
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#why-us">Why us</a></li>
+
+          <li><a class="nav-link scrollto" href="#specials">Specials</a></li>
+          <li><a class="nav-link scrollto" href="#events">Events</a></li>
+          <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'items' %}">Items</a></li>
+
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+      <a href="{% url 'signup' %}" class="book-a-table-btn scrollto d-none d-lg-flex">Registration</a>
+
+    </div>
+  </header><!-- End Header -->
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+  <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+    <div class="row">
+
+      <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
+        <a href="" class="glightbox play-btn"></a>
+      </div>
+      <div class="col-lg-8 ">
+        <div class="text-center">
+        <h1>Welcome to <span>NSU Cafeteria</span></h1>
+        <h2>Catering to Your Cravings: Exploring the Delights of NSU Cafeteria
+        </h2>
+       </div>
+        <div class="btns">
+          <a href="{% url 'items' %}" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
+          <a href="{% url 'login' %}" class="btn-book animated fadeInUp scrollto">Log In</a>
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
+</section><!-- End Hero -->
+  
+  <main id="main">
+    
+
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>About us</h2>
+            <p class="fst-italic">
+              the dining destination at NSU.
+            </p>
+          </div>
+      
+          <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+              <div class="about-img">
+                <img src="{% static 'assets/img/about.jpg' %}" alt="NSU Cafeteria">
+              </div>
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+              <ul>
+                <li><i class="bi bi-check-circle"></i> We take pride in serving delicious and nutritious meals.</li>
+                <li><i class="bi bi-check-circle"></i> Our diverse menu caters to various tastes and dietary preferences.</li>
+                <li><i class="bi bi-check-circle"></i> NSU Cafeteria is not just a place to eat; it's a hub for social interaction and student gatherings.</li>
+              </ul>
+              <p>
+                Located at the heart of the North South University campus, we are open every day to serve you with a wide range of dining options. Our dedicated staff is here to make your dining experience enjoyable and hassle-free. We look forward to being a part of your NSU experience.
+              </p>
+            </div>
+          </div>
+      
+        </div>
+      </section><!-- End About Section -->
+      
+
+        <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us">
+        <div class="container" data-aos="fade-up">
+      
+          <div class="section-title">
+            <h2>Why Us</h2>
+            <p>Why Choose NSU Cafeteria</p>
+          </div>
+      
+          <div class="row">
+      
+            <div class="col-lg-4">
+              <div class="box" data-aos="zoom-in" data-aos-delay="100">
+                <span>01</span>
+                <h4>Diverse Menu</h4>
+                <p>We offer a diverse menu with a wide range of delicious options to satisfy all tastes and dietary preferences.</p>
+              </div>
+            </div>
+      
+            <div class="col-lg-4 mt-4 mt-lg-0">
+              <div class="box" data-aos="zoom-in" data-aos-delay="200">
+                <span>02</span>
+                <h4>Fresh Ingredients</h4>
+                <p>We meticulously procure fresh, locally-sourced ingredients to guarantee the utmost quality and sustainability in our meals.</p>
+              </div>
+            </div>
+      
+            <div class="col-lg-4 mt-4 mt-lg-0">
+              <div class="box" data-aos="zoom-in" data-aos-delay="300">
+                <span>03</span>
+                <h4>Community Atmosphere</h4>
+                <p>NSU Cafeteria is more than a dining place; it's a welcoming community hub where students gather, study, and connect.</p>
+              </div>
+            </div>
+      
+          </div>
+      
+        </div>
+      </section><!-- End Why Us Section -->
+
+        <!-- ======= Specials Section ======= -->
+    <section id="specials" class="specials">
+        <div class="container" data-aos="fade-up">
+      
+          <div class="section-title">
+            <h2>Popular University Cafeteria Foods</h2>
+            <p>Discover Our Delicious Offerings</p>
+          </div>
+      
+          <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-3">
+              <ul class="nav nav-tabs flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Biriyani</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Hilsa Fish Curry</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Fuchka (Pani Puri)</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Bhaji with Paratha</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Chingri Malai Curry</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-9 mt-4 mt-lg-0">
+              <div class="tab-content">
+                <div class="tab-pane active show" id="tab-1">
+                  <div class="row">
+                    <div class="col-lg-8 details order-2 order-lg-1">
+                      <h3>Biriyani</h3>
+                      <p class="fst-italic">Aromatic rice dish cooked with flavorful spices and tender pieces of meat or vegetables.</p>
+                      <p>Biriyani is a beloved Bangladeshi delicacy known for its rich taste and fragrant aroma. It's a must-try dish in our university cafeteria.</p>
+                    </div>
+                    <div class="col-lg-4 text-center order-1 order-lg-2">
+                      <img src="{% static 'assets/img/biryani.png' %}" alt="Biriyani" class="img-fluid">
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="tab-2">
+                  <div class="row">
+                    <div class="col-lg-8 details order-2 order-lg-1">
+                      <h3>Hilsa Fish Curry</h3>
+                      <p class="fst-italic">A traditional Bangladeshi fish curry made with fresh hilsa fish and aromatic spices.</p>
+                      <p>Hilsa Fish Curry is a quintessential Bengali dish, and our cafeteria serves it with perfection. Experience the flavors of Bangladesh!</p>
+                    </div>
+                    <div class="col-lg-4 text-center order-1 order-lg-2">
+                      <img src="{% static 'assets/img/ele.webp' %}" alt="Hilsa Fish Curry" class="img-fluid">
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="tab-3">
+                  <div class="row">
+                    <div class="col-lg-8 details order-2 order-lg-1">
+                      <h3>Fuchka (Pani Puri)</h3>
+                      <p class="fst-italic">A popular street food snack consisting of hollow crispy balls filled with tangy tamarind water and spicy stuffing.</p>
+                      <p>Indulge in the delightful flavors of Fuchka, a beloved street food from Bangladesh, right here in our cafeteria. Taste the excitement!</p>
+                    </div>
+                    <div class="col-lg-4 text-center order-1 order-lg-2">
+                      <img src="{% static 'assets/img/fu.webp' %}" alt="Fuchka" class="img-fluid">
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="tab-4">
+                  <div class="row">
+                    <div class="col-lg-8 details order-2 order-lg-1">
+                      <h3>Bharta with Paratha</h3>
+                      <p class="fst-italic">Vegetables (bhaji) served with flaky paratha bread.</p>
+                      <p>Experience the comfort of Bhaji with Paratha, a classic Bangladeshi combination that's both hearty and delicious.</p>
+                    </div>
+                    <div class="col-lg-4 text-center order-1 order-lg-2">
+                      <img src="{% static 'assets/img/bhaji.png' %}" alt="Bharta with Paratha" class="img-fluid">
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="tab-5">
+                  <div class="row">
+                    <div class="col-lg-8 details order-2 order-lg-1">
+                      <h3>Chingri Malai Curry</h3>
+                      <p class="fst-italic">A creamy coconut-based shrimp curry, a Bengali culinary masterpiece.</p>
+                      <p>Indulge in the exquisite flavors of Chingri Malai Curry, a culinary masterpiece from Bangladesh, right here in our cafeteria.</p>
+                    </div>
+                    <div class="col-lg-4 text-center order-1 order-lg-2">
+                      <img src="{% static 'assets/img/chingri.jpg' %}" alt="Chingri Malai Curry" class="img-fluid">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      </section><!-- End Specials Section -->
+      
+        <!-- ======= Events Section ======= -->
+    <section id="events" class="events">
+        <div class="container" data-aos="fade-up">
+      
+          <div class="section-title">
+            <h2>Events</h2>
+            <p>Host Your Special Occasions at NSU Cafeteria</p>
+          </div>
+      
+          <div class="events-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-wrapper">
+      
+              <!-- Birthday Parties -->
+              <div class="swiper-slide">
+                <div class="row event-item">
+                  <!-- Image -->
+                  <div class="col-lg-6">
+                    <img src="{% static 'assets/img/club.jpg' %}" class="img-fluid" alt="Birthday Parties">
+                  </div>
+                  <!-- Content -->
+                  <div class="col-lg-6 pt-4 pt-lg-0 content">
+                    <h3>Birthday Parties</h3>
+                    <!-- Contact Us for Pricing with Hover and Click Effect -->
+                    <div class="price">
+                      <p><a href="contact-us.html" class="contact-link">Contact Us for Pricing</a></p>
+                    </div>
+                    <p class="fst-italic">
+                      Celebrate your special day with us! We offer a memorable birthday party experience with delicious food and a fantastic ambiance.
+                    </p>
+                    <ul>
+                      <li><i class="bi bi-check-circled"></i> Customizable menus for your preferences.</li>
+                      <li><i class="bi bi-check-circled"></i> Spacious dining area for your guests.</li>
+                      <li><i class="bi bi-check-circled"></i> Professional staff to make your celebration unforgettable.</li>
+                    </ul>
+                    <p>
+                      Make your birthday celebration extraordinary at NSU Cafeteria.
+                    </p>
+                  </div>
+                </div>
+              </div><!-- End birthday party item -->
+      
+              <!-- Club Affairs -->
+              <div class="swiper-slide">
+                <div class="row event-item">
+                  <!-- Image -->
+                  <div class="col-lg-6">
+                    <img src="{% static 'assets/img/club.jpg' %}" class="img-fluid" alt="Club Affairs">
+                  </div>
+                  <!-- Content -->
+                  <div class="col-lg-6 pt-4 pt-lg-0 content">
+                    <h3>Club Affairs</h3>
+                    <!-- Contact Us for Pricing with Hover and Click Effect -->
+                    <div class="price">
+                      <p><a href="contact-us.html" class="contact-link">Contact Us for Pricing</a></p>
+                    </div>
+                    <p class="fst-italic">
+                      Host your club's special events and affairs at NSU Cafeteria. Our versatile venue and customizable options are perfect for club gatherings.
+                    </p>
+                    <ul>
+                      <li><i class="bi bi-check-circled"></i> Exclusive use of our restaurant for your club event.</li>
+                      <li><i class="bi bi-check-circled"></i> Tailored menu selections to suit your club's preferences.</li>
+                      <li><i class="bi bi-check-circled"></i> Professional event planning and coordination.</li>
+                    </ul>
+                    <p>
+                      Create memorable club affairs at NSU Cafeteria.
+                    </p>
+                  </div>
+                </div>
+              </div><!-- End Club Affairs item -->
+      
+              <!-- Custom Parties -->
+              <div class="swiper-slide">
+                <div class="row event-item">
+                  <!-- Image -->
+                  <div class="col-lg-6">
+                    <img src="{% static 'assets/img/club.jpg' %}" class="img-fluid" alt="Custom Parties">
+                  </div>
+                  <!-- Content -->
+                  <div class="col-lg-6 pt-4 pt-lg-0 content">
+                    <h3>Custom Parties</h3>
+                    <!-- Contact Us for Pricing with Hover and Click Effect -->
+                    <div class="price">
+                      <p><a href="contact-us.html" class="contact-link">Contact Us for Pricing</a></p>
+                    </div>
+                    <p class="fst-italic">
+                      Create a tailored event experience with our custom party packages. We cater to your unique preferences and requirements.
+                    </p>
+                    <ul>
+                      <li><i class="bi bi-check-circled"></i> Personalized event planning and coordination.</li>
+                      <li><i class="bi bi-check-circled"></i> Flexibility to choose your menu items.</li>
+                      <li><i class="bi bi-check-circled"></i> Dedicated staff to make your vision a reality.</li>
+                    </ul>
+                    <p>
+                      Let us bring your dream event to life at NSU Cafeteria.
+                    </p>
+                  </div>
+                </div>
+              </div><!-- End custom party item -->
+      
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+      
+        </div>
+      </section><!-- End Events Section -->
+      
+      <style>
+        /* Contact Us for Pricing Hover Effect */
+        .contact-link {
+          color: #007bff; /* Initial text color */
+          transition: color 0.2s ease-in-out; /* Smooth color transition */
+        }
+      
+        .contact-link:hover {
+          color: #ff6600; /* Change the text color on hover to your desired color */
+          transform: translateX(5px); /* Move the text 5 pixels to the right on hover (adjust as needed) */
+        }
+      
+        .contact-link:focus {
+          outline: none; /* Remove the outline when the link is clicked */
+        }
+      </style>
+        <!-- ======= Gallery Section ======= -->
+        <section id="gallery" class="gallery">
+
+          <div class="container" data-aos="fade-up">
+            <div class="section-title">
+              <h2>Gallery</h2>
+              <p>Some photos from Our Cafeteria</p>
+            </div>
+          </div>
+
+          <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row g-0">
+
+              <div class="col-lg-3 col-md-4">
+                <div class="gallery-item">
+                  <a href="assets/img/gallery/gallery-1.jpg" class="gallery-lightbox" data-gall="gallery-item">
+                    <img src="{% static 'assets/img/gallery/gallery-1.jpg' %}" alt="" class="img-fluid">
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-4">
+                <div class="gallery-item">
+                  <a href="assets/img/gallery/gallery-2.jpg" class="gallery-lightbox" data-gall="gallery-item">
+                    <img src="{% static 'assets/img/gallery/gallery-1.jpg' %}" alt="" class="img-fluid">
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-4">
+                <div class="gallery-item">
+                  <a href="assets/img/gallery/gallery-3.jpg" class="gallery-lightbox" data-gall="gallery-item">
+                    <img src="{% static 'assets/img/gallery/gallery-1.jpg' %}" alt="" class="img-fluid">
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-4">
+                <div class="gallery-item">
+                  <a href="assets/img/gallery/gallery-4.jpg" class="gallery-lightbox" data-gall="gallery-item">
+                    <img src="{% static 'assets/img/gallery/gallery-1.jpg' %}" alt="" class="img-fluid">
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-4">
+                <div class="gallery-item">
+                  <a href="assets/img/gallery/gallery-5.jpg" class="gallery-lightbox" data-gall="gallery-item">
+                    <img src="{% static 'assets/img/gallery/gallery-2.jpg' %}" alt="" class="img-fluid">
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-4">
+                <div class="gallery-item">
+                  <a href="assets/img/gallery/gallery-6.jpg" class="gallery-lightbox" data-gall="gallery-item">
+                    <img src="{% static 'assets/img/gallery/gallery-2.jpg' %}" alt="" class="img-fluid">
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-4">
+                <div class="gallery-item">
+                  <a href="assets/img/gallery/gallery-7.jpg" class="gallery-lightbox" data-gall="gallery-item">
+                    <img src="{% static 'assets/img/gallery/gallery-2.jpg' %}" alt="" class="img-fluid">
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-4">
+                <div class="gallery-item">
+                  <a href="assets/img/gallery/gallery-8.jpg" class="gallery-lightbox" data-gall="gallery-item">
+                    <img src="{% static 'assets/img/gallery/gallery-2.jpg' %}" alt="" class="img-fluid">
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section><!-- End Gallery Section -->
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+<footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+  
+          <!-- NSU CAFETERIA (Left) -->
+          <div class="col-lg-4">
+            <div class="footer-info">
+              <h3>NSU cafeteria</h3>
+              <p>
+                Plot # 15, Block B, Bashundhara<br>
+                Dhaka, Bangladesh<br><br>
+                <strong>Phone:</strong> +880-2-55668200<br>
+                <strong>Email:</strong> cafensuquery@gmail.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Useful Links (Middle) -->
+          <div class="col-lg-4 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+  
+          <!-- Purchase Info (Right) -->
+          <div class="col-lg-4 footer-links">
+            <h4>Purchase Info</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Payment Policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Shipping Policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Return Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  <script src="{% static 'assets/js/logo.js' %}"></script>
+
+
+
+</body>
+
+</html>

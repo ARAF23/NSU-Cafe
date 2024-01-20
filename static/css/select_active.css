@@ -1,0 +1,38 @@
+.select-active {
+    /* Style for the select element itself */
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 200px;
+    background-color: #fff;
+    color: #333;
+    border-radius: 5px;
+  }
+  
+  .select-active:hover {
+    /* Style for the select element when hovered over */
+    border-color: #666;
+  }
+  
+  .select-active option {
+    /* Style for the select options */
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .select-active option:hover {
+    /* Style for the select options when hovered over */
+    background-color: #f0f0f0;
+    color: #444;
+  }
+ 
+/* Add this CSS to your stylesheet */
+.custom-input {
+    text-align: right; /* Align the text inside the input to the right */
+}
+
+/* Adjust the width and margin as needed */
+.custom-input {
+    width: 200px; /* Set the width as per your design */
+    margin-left: 10px; /* Adjust the margin to create space between the select and the input */
+}
+

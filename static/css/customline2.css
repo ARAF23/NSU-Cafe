@@ -1,0 +1,7 @@
+.custom-line2 {
+    border: none; /* Remove the default line style */
+    height: 2px; /* Set the height of the line */
+    background-color: #FF6F61; /* Set the line color */
+    margin-top: 10px; /* Adjust the margin above the line as needed */
+    margin-bottom: 20px; /* Adjust the margin below the line as needed */
+}

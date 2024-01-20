@@ -1,0 +1,18 @@
+.custom-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Add spacing between list items */
+    height: 50px; /* Specify the desired height */
+    width: 500px; /* Specify the desired width */
+    border: none; /* Optional border style */
+    padding: 10px; /* Optional padding */
+}
+
+.list-item i {
+    margin-right: 10px; /* Add spacing between the icon and text */
+}

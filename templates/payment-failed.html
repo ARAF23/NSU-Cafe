@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <title>Error Page</title>
+  <link href="img/favicon.ico" rel="icon">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="{% static 'lib/slick/slick.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/slick/slick-theme.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style2.css' %}" rel="stylesheet">
+  <link href="{% static 'css/select_active.css' %}" rel="stylesheet">
+  <link href="{% static 'css/filter.css' %}" rel="stylesheet">
+  <link href="{% static 'css/hi.css' %}" rel="stylesheet">  
+
+    <style>
+
+            @import url(https://fonts.googleapis.com/css?family=Raleway:400,700,600);
+            
+            .container {
+              padding: 20px;
+            }
+            
+            body {
+              background-color: #f6f4f4;
+              font-family: 'Raleway', sans-serif;
+            }
+            
+            .teal {
+              background-color: #ffc952 !important;
+              color: #444444 !important;
+            }
+            
+            a {
+              color: #47b8e0 !important;
+            }
+            
+            .message {
+              text-align: left;
+            }
+            
+            .price1 {
+              font-size: 40px;
+              font-weight: 200;
+              display: block;
+              text-align: center;
+            }
+            
+            .ui.message p {
+              margin: 5px;
+            }
+
+    </style>
+
+</head>
+<body>
+  <div class="container">
+    <div class="ui middle aligned center aligned grid">
+      <div class="ui eight wide column">
+        <form class="ui large form">
+          <div class="ui icon negative message">
+            <i class="warning icon"></i>
+            <div class="content">
+              <div class="header">
+                Oops! Something went wrong.
+              </div>
+              <p>While trying to Pay.</p>
+            </div>
+          </div>
+        </form>
+        
+        <!-- Button to go to the checkout page -->
+        <a href="{% url 'items' %}" class="ui large teal fluid button">Go to Shop</a>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+  <script src="{% static 'lib/slick/slick.min.js' %}"></script>
+  
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/function.js' %}"></script>
+
+</body>
+</html>

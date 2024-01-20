@@ -1,0 +1,29 @@
+.label-div1 {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.label-div1 strong {
+    flex: 1;
+    text-align: left; /* Adjust this as needed */
+}
+
+
+.label-div2 {
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.label-div2 {
+    flex: 1;
+    text-align: right; /* Adjust this as needed */
+}
+
+.label-div2{
+    flex: 3;
+}
+

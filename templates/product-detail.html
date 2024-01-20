@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Product Details | NSU Cafeteria</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="eCommerce HTML Template Free Download" name="keywords">
+        <meta content="eCommerce HTML Template Free Download" name="description">
+
+    
+        <link href="img/favicon.ico" rel="icon">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
+
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.2/dist/css/bootstrap.min.css">
+
+        <link href="{% static 'lib/slick/slick.css' %}" rel="stylesheet">
+        <link href="{% static 'lib/slick/slick-theme.css' %}" rel="stylesheet">
+
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+        <link href="{% static 'css/style2.css' %}" rel="stylesheet">
+
+        <link href="{% static 'css/label.css' %}" rel="stylesheet">
+        <link href="{% static 'css/vfs.css' %}" rel="stylesheet">
+        <link href="{% static 'css/pdl.css' %}" rel="stylesheet">
+        <link href="{% static 'css/inp.css' %}" rel="stylesheet">
+
+
+        <link href="{% static 'css/customline2.css' %}" rel="stylesheet">
+        <link href="{% static 'css/select_active.css' %}" rel="stylesheet">
+        <style>
+            .progress-label {
+                text-align: center;
+            }
+
+            #submit-button {
+                padding: 5px 20px;
+                cursor: pointer;
+                height: 50px;
+                margin: 5px;
+            }
+        </style>
+        
+
+
+
+
+    </head>
+
+    <body>
+        <div class="top-bar">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <i class="fa fa-envelope"></i>
+                        cafensuquery@gmail.com
+                    </div>
+                    <div class="col-sm-6">
+                        <i class="fa fa-phone-alt"></i>
+                        +880-2-55668200
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Top bar End -->
+        
+        <!-- Nav Bar Start -->
+        <div class="nav">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                    <a href="#" class="navbar-brand">MENU</a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto">
+                            <a href="{% url 'index' %}" class="nav-item nav-link">Home</a>
+                            <a href="{% url 'items' %}" class="nav-item nav-link active">Items</a>
+                            <!-- <a href="product-detail.html" class="nav-item nav-link">Product Detail</a> --> 
+                            <a href="" class="nav-item nav-link">Cart</a>
+                            <a href="" class="nav-item nav-link">Checkout</a>
+                            <a href="" class="nav-item nav-link">My Account</a>
+                            <a href="" class="nav-item nav-link">Wishlist</a>
+
+                            <div class="nav-item dropdown">
+                                <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories</a>
+                                <div class="dropdown-menu">
+
+                                    <a href="{% url 'category' %}" class="dropdown-item">Show All</a>
+
+                                    {% for c in categories %}
+
+                                    <a href="{% url 'app1:catlist' c.cid %}" class="dropdown-item"> {{ c.title }} </a>
+
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="nav-item dropdown">
+                                <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">Vendors</a>
+                                <div class="dropdown-menu">
+
+                                    <a href="{% url 'app1:vendor-list' %}" class="dropdown-item">Show All</a>
+
+                                    {% for v in vendors %}
+
+                                    <a href="{% url 'app1:vendor-detail' v.vid %}" class="dropdown-item"> {{ v.title }} </a>
+
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="navbar-nav ml-auto">
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Account</a>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">Login</a>
+                                    <a href="#" class="dropdown-item">Register</a>
+                                    <a href="#" class="dropdown-item">Contuct Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+        <!-- Nav Bar End -->           
+        <!-- Bottom Bar Start -->
+        <div class="bottom-bar">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-3">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="{% static 'img/loogoo.gif' %}" alt="Logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="search">
+                            <form action="{% url 'app1:search' %}" method="GET">
+                                  
+                                <input type="text" placeholder="Search for items..." name="q" class="flexible-input" />
+                          
+                            <button><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="user">
+                            <a href="wishlist.html" class="btn wishlist">
+                                <i class="fa fa-heart"></i>
+                                <span>(0)</span>
+                            </a>
+                            <a href="{% url 'app1:cart' %}" class="btn cart">
+                                <i class="fa fa-shopping-cart cart-items-count"></i>
+                                <span> ({{ request.session.cart_data_obj|length }}) </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Bar End -->  
+        
+        <div class="breadcrumb-wrap">
+            <div class="container-fluid">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Items</a></li>
+                    <li class="breadcrumb-item active">Item description</li>
+                </ul>
+            </div>
+        </div>
+    
+        <!-- Product Detail Start -->
+        <div class="product-detail">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="product-detail-top">
+                            <div class="row align-items-center">
+                                <div class="col-md-5">
+                                    <div class="product-slider-single normal-slider">
+
+                                        <img src="{{p.image.url}}" alt="Product Image">
+
+                                        {% for p in p_image %}
+                                        <img src=" {{ p.images.url }} " alt="Product Image">
+                                        {% endfor %}
+
+                                    </div>
+                                    <div class="product-slider-single-nav normal-slider">
+
+                                        <div class="slider-nav-img"><img src="{{p.image.url}}" alt="Product Image"></div>
+                                        {% for p in p_image %}
+                                        <div class="slider-nav-img"><img src="{{ p.images.url }} " alt="Product Image"></div>
+                                        {% endfor %}
+
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="product-content">
+                                        <div class="label-1">
+                                            {% if p.get_percentage|floatformat:0|add:0 > 0 %}
+                                                +{{ p.get_percentage | floatformat:0}}%
+                                            {% else %}
+                                                 {{ p.get_percentage | floatformat:0 }}%
+                                            {% endif %}
+                                        </div>
+                                        <br/>
+                                        <div class="title"><h2> {{p.title}} </h2></div>
+                                        <div class="ratting">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <div class="price">
+                                            <h4>Price:</h4>
+                                            <p class="current-product-price-{{p.id}}"> {{ p.price }}</p>
+                                            <p>/-</p>
+
+                                            <span style="font-weight: bold; font-size: 25px;"> {{ p.old_price }}/-</span>
+                                        </div>
+                                        <div class="quantity">
+                                            <h4>Quantity:</h4>
+                                            <div class="qty">
+                                                <button class="btn-minus"><i class="fa fa-minus"></i></button>
+                                                <input type="number" value="1" name="" id="product-quantity" class="product-quantity-{{p.id}}">
+
+                                                <button class="btn-plus"><i class="fa fa-plus"></i></button>
+                                            </div>
+                                            <div class="zxy">
+                
+                                      <!--
+                                            <input type="hidden" value="1" name="" id="product-quantity" class="product-quantity-{{p.id}}" >
+                                      -->     
+                                            <input type="hidden" value="{{p.pid}}" name="" id="" class="product-pid-{{p.id}}" >
+                                            <input type="hidden" value="{{p.image.url}}" id="" class="product-image-{{p.id}}" >
+                                            <input type="hidden" value="{{p.id}}" id="" class="product-id-{{p.id}}" >
+                                            <input type="hidden" value="{{p.title}}" name="" id="" class="product-title-{{p.id}}" >
+                                           
+                                            </div>    
+                                        </div>
+
+                                        <div class="p-size">
+                                            <h4>In stock:</h4>
+                                            <div class="btn-group btn-group-sm">
+                                                {{ p.stock_count }}
+
+                                            </div> 
+                                        </div>
+                                        <div class="p-size">
+                                            <h4>Type:</h4>
+                                            <div class="btn-group btn-group-sm">
+                                                {{ p.type }}
+
+                                            </div> 
+                                        </div>
+                                        <div class="p-size">
+                                            <h4>MFG:</h4>
+                                            <div class="btn-group btn-group-sm">
+                                                {{ p.mfd }}
+
+                                            </div> 
+                                        </div>
+                                        <div class="p-size">
+                                            <h4>LIFE:</h4>
+                                            <div class="btn-group btn-group-sm">
+                                                {{ p.life }}
+
+                                            </div> 
+                                        </div>
+                                        <div class="p-size">
+                                            <h4>SKU:</h4>
+                                            <div class="btn-group btn-group-sm">
+                                                {{ p.sku }}
+
+                                            </div> 
+                                        </div>
+                                        <div class="p-size">
+                                            <h4>Tag:</h4>
+                                            <div class="btn-group btn-group-sm">
+                                                {% for tag in p.tags.all%}
+                                                   <a href="{% url 'app1:tags' tag.slug %}" rel="tag"> #{{ tag.name }}</a>,
+                                                {% endfor %}
+
+                                            </div> 
+                                        </div>
+                                        <div class="p-size">
+                                            <h4>Description:</h4>
+                                            <div>
+                                                <p>
+                                                    {{ p.description| safe }}
+                                                </p>
+                                            </div> 
+                                        </div>
+                                        
+                                        <div class="action">
+                                            <button type="submit" class="btn add-to-cart-btn" data-index="{{p.id}}" id="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                                            <a class="btn" href="#"><i class="fa fa-shopping-bag"></i>Buy Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row product-detail-bottom">
+                            <div class="col-lg-12">
+                                <ul class="nav nav-pills nav-justified">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="pill" href="#description">Description</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="pill" href="#specification">Rating ({{ average_rating.rating|floatformat:1 }})</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="pill" href="#reviews">Reviews ({{ reviews.count }})</a>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div id="description" class="container tab-pane active">
+                                        <h4>Product description</h4>
+                                        <p>
+                                            {{ p.description|safe }}
+                                        </p>
+                                    </div>
+                                    <div id="specification" class="container tab-pane fade">
+                                        <div class="p-size">
+                                            <h4 style="color: blue; text-align: center;"> 
+                                                {{ average_rating.rating|floatformat:1 }} out of 5.0 
+                                            </h4>
+                                             
+                                        </div>
+                                        <div class="container mt-5">
+                                            <h4>Star Rating Progress Bars</h4>
+                                            {% for star, percentage in rating_percentage.items %}
+                                                <div class="progress mb-3">
+                                                    <div class="progress-bar bg-{{ star|add:"-star" }}" role="progressbar" style="width: {{ percentage }}%;" aria-valuenow="{{ percentage }}" aria-valuemin="0" aria-valuemax="100">
+                                                        {{ star }} Star ({{ percentage|floatformat:2 }}%)
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    
+                                        
+                                                                        
+                                    </div>
+                                    <div id="reviews" class="container tab-pane fade">
+                                        {% for r in reviews %}
+                                    <div class="reviews-submitted">
+
+                                        <div class="reviewer " style="color: blue;">
+                                            
+                                                  <img src="https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg" alt="User Avatar" class="user-avatar" style="width: 50px; height: 50px; ">
+                                                      {{ r.user.username|title }} - <span  >{{ r.date|date:"d M Y" }}</span>
+                                                <div class="ratting">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                        </div>
+
+                                                 <p>
+                                                       {{ r.review }}
+                                                </p>
+                                    
+                                    </div>
+                                        {% endfor %}
+                                        <form id="commentForm" class="form-contact comment_form" action="{% url 'app1:ajax-add-view' p.id %}" method="POST">
+                                            {% csrf_token %}
+                                            <h4>Give your Review:</h4>
+                                            <p><strong class= "text-success" id="review-res">  </strong>
+                                            </p>
+                                            <div class="row form">
+                                                {{review_form.review}}
+                                                {{review_form.rating}}
+                                        
+                                                <div>
+                                                    <button id="submit-button">Submit</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product">
+                            <div class="section-header">
+                                <h1>Related Products</h1>
+                            </div>
+
+                            <div class="row align-items-center product-slider product-slider-3">
+                                {% for p in products %}
+                                <div class="col-lg-3">
+                                    <div class="product-item">
+                                        <div class="hot-label">
+                                            {% if p.get_percentage|floatformat:0|add:0 > 0 %}
+                                                +{{ p.get_percentage | floatformat:0}}%
+                                            {% else %}
+                                                 {{ p.get_percentage | floatformat:0 }}%
+                                            {% endif %}
+                                        </div>
+                                                                            
+                                        <div class="product-title">
+                                            <a href="{% url 'app1:product-detail' p.pid %}"> {{ p.title|truncatechars:20 }} </a>
+                                            <div class="ratting">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+    
+                                        <div class="product-image">
+                                            <a href="{% url 'app1:product-detail' p.pid %}">
+                                                <img src="{{ p.image.url }}" alt="Product Image">
+                                            </a>
+                                            <div class="product-action">
+                                                <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                                <a href="{% url 'app1:product-detail' p.pid %}"><i class="fa fa-search"></i></a>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="product-price">
+                                            <button class="btn add-to-cart-btn" data-index="{{p.id}}" id="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Buy Now</button>                          
+                                            <p style="color: #FF6F61;">By: {{ p.vendor.title }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                     <!-- Side Bar-->
+                     
+                    <div class="col-lg-4 sidebar">
+                        <div class="sidebar-widget tag">
+                            <h2 class="title">Address</h2>
+
+                            <p>
+                                <i class="fas fa-map-marker-alt"></i> {{ address.address }}
+                                <span class="verification-status">
+                                    {% if address.status == True %}
+                                        <span class="text-success">Verified Address</span>
+                                    {% else %}
+                                        <span class="text-danger">Unverified Address</span>
+                                    {% endif %}
+                                </span>
+                            </p> <br/>
+                            <h2 class="title">Return and Warranty</h2>
+
+
+                            <ul class="custom-list">
+                                <div class="list-item">
+                                    <i class="fas fa-check-circle text-success"></i>
+                                    <span>{{ p.vendor.authentic_rating }}% Authentic</span>
+                                </div>
+                            
+                                <div class="list-item">
+                                    <i class="fas fa-history text-info"></i>
+                                    <span>{{ p.vendor.days_return }} Days Return</span>
+                                </div>
+                            
+                                <div class="list-item">
+                                    <i class="fas fa-clock text-success"></i>
+                                    Shipping On Time: <span> {{ p.vendor.shipping_on_time }}%</span>
+                                </div>
+                            
+                                <div class="list-item">
+                                    <i class="fas fa-comment text-success"></i>
+                                    Chat Response: <span> {{ p.vendor.chat_resp_time }}%</span>
+                                </div>
+                                
+                                <!-- Add more warranty information here as needed -->
+                            </ul>
+                            
+
+
+                        </div>
+                        
+                        <div class="sidebar-widget tag">
+                           
+                            <h2 class="title">Vendor</h2>
+
+                            <div>
+                                <h3>
+                                   <img src="{{ p.vendor.image.url }}" width="50" height="50" style="border-radius: 50%; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); margin-right: 10px; vertical-align: middle;">
+                                           {{ p.vendor.title }} 
+                                          
+                                </h3>
+                                
+                            </div>
+                            <p style="color: black;">Since <strong><span style="color: #FF6F61;">
+                                {{ p.vendor.date|date:"Y" }}</span></strong>
+                            </p>
+                            
+                            
+
+                               
+                            <ul class="custom-list">
+                                <div class="list-item">
+                                    <div class="product-rate d-inline-block">
+                                        <div class="product-rating" style="width: 100%">
+                                            <!-- Use a star icon for rating -->
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star-half-alt text-warning"></i> <!-- Half-filled star for 4.0 rating -->
+                                        </div>   
+                                    </div>
+                                    <span class="font-small ml-2 text-muted">(4.0)</span>
+                                </div>
+                                <div class="list-item">
+                                    <!-- Use a map marker icon for address -->
+                                    <i class="fas fa-map-marker text-success"></i>
+                                    <span>{{ p.vendor.address }}</span>
+                                </div>
+                                <div class="list-item">
+                                    <!-- Use a phone icon for contact -->
+                                    <i class="fas fa-phone text-success"></i>
+                                    <span>{{ p.vendor.contact }}</span>
+                                </div>
+                            </ul>
+                            
+                        </div>
+                        
+                        
+                        
+                        <!-- here -->
+                        
+                        <div class="sidebar-widget category">
+                            <h2 class="title"><a href="{% url 'app1:vendor-list' %}">Vendors</a></h2>
+                            <nav class="navbar bg-light">
+                                <ul class="navbar-nav">
+                                    {% for v in vendors %}
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="">
+                                            <div style="display: flex; align-items: center;">
+                                                <img src="{{ v.image.url }}" width="50" height="50" style="border-radius: 50%; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); margin-right: 10px; vertical-align: middle;">
+                                                <a href="{% url 'app1:vendor-detail' v.vid %}">
+                                                    <span style="margin-right: auto; font-weight: bold;">{{ v.title }}</span>
+                                                </a>
+                                                <span style="color: #888; margin-left: auto; ">{{ v.product.all.count }}</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                
+                                
+                            </nav>
+                        </div>
+                        
+                        <div class="sidebar-widget tag">
+                            <h2 class="title">Tags Cloud</h2>
+
+                              <a class="nav-link" href="{% url 'popular' %}"><i class="fas fa-star"></i> Most Popular</a>
+                              
+                              {% for tag in all_tags %}
+                                    <a href="{% url 'app1:tags' tag.slug %}" rel="tag">{{ tag.name }}</a>
+                              {% endfor %}
+                             
+                              
+                        </div>
+                        
+                    </div>
+                    <!-- Side Bar End -->
+                </div>
+            </div>
+        </div>
+        <!-- Product Detail End -->
+        
+        <!-- vendors-->
+        <div class="brand">
+            <div class="container-fluid">
+                <div class="brand-slider">
+                    <div class="brand-item"><img src="{% static 'img/royal.jpg' %}" alt=""></div>
+                    <div class="brand-item"><img src="{% static 'img/kashundi.jpg' %}" alt=""></div>
+                    <div class="brand-item"><img src="{% static 'img/cafez.jpg' %}" alt=""></div>
+                    <div class="brand-item"><img src="{% static 'img/green.jpeg' %}" alt=""></div>
+                    <div class="brand-item"><img src="{% static 'img/elite.jpg' %}" alt=""></div>
+                    <div class="brand-item"><img src="{% static 'img/green.jpeg' %}" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <!-- vendors end -->
+        
+        <!-- Footer Start -->
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Get in Touch</h2>
+                            <div class="contact-info">
+                                <p><i class="fa fa-map-marker"></i>Plot # 15, Dhaka 1229, Block B, Bashundhara</p>
+                                <p><i class="fa fa-envelope"></i>cafensuquery@gmail.com</p>
+                                <p><i class="fa fa-phone"></i>+880-2-55668200</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Follow Us</h2>
+                            <div class="contact-info">
+                                <div class="social">
+                                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Info</h2>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms & Condition</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Purchase Info</h2>
+                            <ul>
+                                <li><a href="#">Pyament Policy</a></li>
+                                <li><a href="#">Shipping Policy</a></li>
+                                <li><a href="#">Return Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row payment align-items-center">
+                    <div class="col-md-6">
+                        <div class="payment-method">
+                            <h2>We Accept:</h2>
+                            <img src="{% static 'img/bkash-nagad-rocket.png' %}" alt="Payment Method" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->   
+        
+        <!-- Back to Top -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+        <script src="{% static 'lib/slick/slick.min.js' %}"></script>
+        
+        <!-- Template Javascript -->
+        <script src="{% static 'js/main.js' %}"></script>
+        <script src="{% static 'js/function.js' %}"></script>
+
+    </body>
+</html>

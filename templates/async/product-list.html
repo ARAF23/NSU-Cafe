@@ -1,0 +1,53 @@
+{% for p in products %}
+                                <div class="col-md-4">
+                                    <div class="product-item">
+                                        <div class="hot-label">
+                                            {% if p.get_percentage|floatformat:0|add:0 > 0 %}
+                                                +{{ p.get_percentage | floatformat:0}}%
+                                            {% else %}
+                                                {{ p.get_percentage | floatformat:0 }}%
+                                            {% endif %}
+                                        </div>
+                                                                            
+                                        <div class="product-title">
+                                            <p style="color: white;">{{ p.category.title }}</p>
+                                            <a href="#"> {{ p.title }} </a>
+                                            <div class="ratting">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-image">
+                                            <a href="product-detail.html">
+                                                <img src="{{ p.image.url }}" alt="Product Image">
+                                            </a>
+                                            <div class="product-action">
+                                                
+                                                <a href="{% url 'app1:cart' %}"><i class="fa fa-cart-plus"></i></a>
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                                <a href="{% url 'app1:product-detail' p.pid %}"><i class="fa fa-search"></i></a>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="product-price">
+                                            <h3 class="current-product-price-{{p.id}}"> {{ p.price }} </h3>
+                                            <span style="color: white;">/-</span>
+                                            <p class="pross"> {{ p.old_price }} <span>/-</span></p>
+
+                                            <input type="hidden" value="1" name="" id="product-quantity" class="product-quantity-{{p.id}}" >
+                                            <input type="hidden" value="{{p.pid}}" name="" id="" class="product-pid-{{p.id}}" >
+                                            <input type="hidden" value="{{p.image.url}}" id="" class="product-image-{{p.id}}" >
+                                            <input type="hidden" value="{{p.id}}" id="" class="product-id-{{p.id}}" >
+                                            <input type="hidden" value="{{p.title}}" name="" id="" class="product-title-{{p.id}}" >
+
+
+                                            <button class="btn add-to-cart-btn" data-index="{{p.id}}" id="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Buy Now</button>                          
+                                            <p style="color: #FF6F61;">By: {{ p.vendor.title }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
